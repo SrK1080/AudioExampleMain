@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         setContentView(R.layout.activity_main);
 
         wikiwebb= (Button) findViewById(R.id.maps);
-
+        wikiwebb.setEnabled(false);
         locationManager=(LocationManager)getSystemService(LOCATION_SERVICE);
         if(Build.VERSION.SDK_INT>=32){
             requestPermissions(PERMISSIONS,PERMISSIONS_ALL);
@@ -178,7 +178,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
 
             }
             Toast.makeText(this, "Recording has stopped", Toast.LENGTH_LONG).show();
-
+            wikiwebb.setEnabled(true);
         } catch (Exception e) {
             e.printStackTrace();
         }
